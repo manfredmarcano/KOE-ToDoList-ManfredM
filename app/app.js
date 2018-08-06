@@ -1,11 +1,34 @@
 var app = angular.module('koeToDoListApp', [
-    
+    'ui.router'
 ]);
  
-app.config([function () {
-    //Bloque config para configurar el resto de cosas que no son las rutas.
-}]);
+app.config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+
+        // HOME STATES AND NESTED VIEWS ========================================
+        .state('home', {
+            url: '/home',
+            templateUrl: 'app/views/home.html',
+            controller: 'indexController'
+        })
+
+        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
+        .state('tablero', {
+            // we'll get to this in a bit    
+            url: '/tablero/{tableroId}',
+            templateUrl: 'app/views/tablero.html',
+            controller: 'tableroController'
+        });
+
+        
+
+});
  
 app.run(function($rootScope) {
     $rootScope.url = 'http://todolist.koeonline.net/';
 });
+
+

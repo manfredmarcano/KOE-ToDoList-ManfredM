@@ -17,22 +17,8 @@
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <![endif]-->
   	</head>
-  	<body ng-controller="indexController as vm">
-	    <h3 class="text-center">Tableros</h3>
-
-	    <div class="row">
-	    	<div class="col-md-4 col-md-offset-4">
-	    		<div class="list-group">
-				  <a href="#" class="list-group-item disabled">
-				    Cras justo odio
-				  </a>
-				  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-				  <a href="#" class="list-group-item">Morbi leo risus</a>
-				  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-				  <a href="#" class="list-group-item">Vestibulum at eros</a>
-				</div>
-	    	</div>
-	    </div>
+  	<body>
+	    <div ui-view></div>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="vendors/jquery/jquery.min.js"></script>
@@ -40,11 +26,13 @@
 		<script src="vendors/bootstrap/bootstrap.min.js"></script>
 
 		<script src="vendors/angularjs/angular.min.js"></script>
+		<script src="vendors/ui-router/angular-ui-router.min.js"></script>
 		<script src="app/app.js"></script>
 
 		<script src="app/services/sessionService.js"></script>
-		
+
 		<script src="app/controllers/indexController.js"></script>
+		<script src="app/controllers/tableroController.js"></script>
 
   	</body>
 </html>
