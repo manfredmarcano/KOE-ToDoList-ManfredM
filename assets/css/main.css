@@ -1,27 +1,40 @@
 /* Webfont: Lato-Regular */
 @font-face {
-    font-family: 'LatoWeb';
-    src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Lato-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+  font-family: 'LatoWeb';
+  src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Lato-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 /* Webfont: Lato-Semibold */
 @font-face {
-    font-family: 'LatoWebSemibold';
-    src: url('../fonts/Lato-Semibold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/Lato-Semibold.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/Lato-Semibold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+  font-family: 'LatoWebSemibold';
+  src: url('../fonts/Lato-Semibold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Lato-Semibold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Lato-Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-Bold */
+@font-face {
+  font-family: 'LatoWebBold';
+  src: url('../fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/Lato-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -29,8 +42,8 @@ body {
 }
 
 .return-home {
-    margin-bottom: 20px;
-    display: inline-block;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 .return-home > span {
 	background-color: #0f5ff3;
@@ -42,7 +55,7 @@ body {
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .return-home:hover {
 	text-decoration: none;
@@ -71,56 +84,55 @@ textarea {
 
 .id-circle {
 	border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    color: #FFFFFF;
-    background-color: #a0a021;
-    padding: 21px;
-    position: absolute;
-    top: -26px;
-    right: 10px;
-    border: solid 2px #FFFFFF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: #FFFFFF;
+  background-color: #a0a021;
+  padding: 21px;
+  position: absolute;
+  top: -26px;
+  right: 10px;
+  border: solid 2px #FFFFFF;
 }
 
 .id-circle > span.number {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .id-circle > span.date {
-    position: absolute;
-    top: calc(100% + 5px);
-    left: 50%;
-    transform: translateX(-50%);
-    color: #333;
-    font-size: .85rem;
-    font-weight: bold;
-    color: #FFFFFF;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: #333;
+  font-size: .85rem;
+  font-weight: bold;
+  color: #FFFFFF;
 }
-
 
 .panel-title {
 	color: #FFFFFF;
 }
 
-/*
 .btnDelete {
-	background-color: red;
-	padding: 10px;
-	color: #FFF;
 }
-*/
-
-    
 
 .panel-default > .panel-heading {
-    padding: 18px 15px;
+  padding: 18px 15px;
 }
 
-
-
+/*
 .lds-facebook {
   display: inline-block;
   position: relative;
@@ -157,40 +169,33 @@ textarea {
     height: 26px;
   }
 }
-
-
 .loader-wrapper {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .loader {
-	/*
-	display: none;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	*/
+
 }
 .loader.show {
-	display: block;
+  display: block;
 }
-
+*/
 
 .btnAddTicket {
-    background-color: #0f5ff3;
-    padding: 10px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    color: #FFFFFF;
-    cursor: pointer;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  background-color: #0f5ff3;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .btnAddTicket:hover {
@@ -198,16 +203,18 @@ textarea {
 }
 
 .tickets-wrapper {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: #dedede;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #dedede;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  margin-bottom: 50px;
 }
 
-
-
+.title-bold {
+  font-family: 'LatoWebBold';
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {

@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center" id="modal-title">Eliminar ticket</h3>
+</div>
+<div class="modal-body" id="modal-body">
+	<p><span class="title-bold">Título:</span> {{ pc.ticket.title }}</p>
+	<p><span class="title-bold">Identificador:</span> {{ pc.ticket.id }}</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="pc.ok()">Eliminar</button>
+    <button class="btn btn-danger" type="button" ng-click="pc.cancel()">Cancelar</button>
+</div>

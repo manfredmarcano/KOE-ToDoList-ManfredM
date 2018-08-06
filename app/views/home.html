@@ -7,9 +7,6 @@
 			<div class="list-group" ng-if="tableros.length">
 				<a ui-sref="tablero({ tableroId: item.id })" class="list-group-item" ng-repeat="item in tableros">{{ item.name }}</a>
 			</div>
-			<!--
-			<pre>{{ tableros | json }}</pre>
-			-->
 		</div>
 	</div>
 

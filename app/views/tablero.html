@@ -57,7 +57,7 @@
 							<div class="panel-footer">
 								<div class="row">
 									<div class="col-xs-3 text-center">
-										<a href="#" class="btnDelete">
+										<a href="javascript:void(0);" ng-click="openTicketEliminationModal('sm', item)" class="btnDelete">
 											<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 										</a>
 									</div>
@@ -79,7 +79,7 @@
 
 
 				<div class="col-xs-12 text-center">
-					<span class="glyphicon glyphicon-plus btnAddTicket" aria-hidden="true" ng-click="open('sm')"></span>
+					<span class="glyphicon glyphicon-plus btnAddTicket" aria-hidden="true" ng-click="openTicketCreationModal('sm')"></span>
 				</div>
 				
 			</div>

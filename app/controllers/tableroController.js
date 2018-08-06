@@ -11,7 +11,7 @@ app.service('updateTicketsListService', function(){
 });
 
 
-app.controller('tableroController', function($http, $scope, $rootScope, $transition$, $uibModal, $document, updateTicketsListService) {
+app.controller('tableroController', function($http, $scope, $rootScope, $transition$, $uibModal, $document, updateTicketsListService, $filter) {
 	$scope.tablero = {};
 	$scope.tickets = [];
 	
@@ -21,7 +21,7 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 	//var pc = this;
 	//$scope.data = "Lorem Name Test"; 
 
-	$scope.open = function (size) {
+	$scope.openTicketCreationModal = function (size) {
 		var modalInstance = $uibModal.open({
 		  animation: true,
 		  ariaLabelledBy: 'modal-title',
@@ -45,6 +45,28 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 		
 	};
 
+	$scope.openTicketEliminationModal = function (size, ticket) {
+		var modalInstance = $uibModal.open({
+		  animation: true,
+		  ariaLabelledBy: 'modal-title',
+		  ariaDescribedBy: 'modal-body',
+		  templateUrl: 'app/views/deleteTicketModal.html',
+		  controller: 'modalDeleteTicketController',
+		  controllerAs: 'pc',
+		  size: size,
+		  resolve: {
+		    ticket: function () {
+		      return ticket;
+		    }
+		  }
+		});
+
+		modalInstance.result.then(function () {
+			//console.log( $filter('filter')($scope.tickets, function(value, index) {return value.id !== updateTicketsListService.getTicket().id;}) );
+			$scope.tickets = $filter('filter')($scope.tickets, function(value, index) {return value.id !== updateTicketsListService.getTicket().id;});
+		});
+	};
+
 
 
 
@@ -64,13 +86,9 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 	};
 
 	$scope.getLastDate = function (estatus) {
-
 		var last = estatus.sort(function(a,b) {
 			return new Date(b.date) - new Date(a.date);
 		});
-
-		console.log("LAST:");
-		console.log(last);
 
 		return last[0].color;
 	};
