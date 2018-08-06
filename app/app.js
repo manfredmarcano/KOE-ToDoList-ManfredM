@@ -27,7 +27,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 });
  
-app.run(function($rootScope) {
+app.run(function($rootScope, $http, sessionService) {
     $rootScope.url = 'http://todolist.koeonline.net/';
 });
 

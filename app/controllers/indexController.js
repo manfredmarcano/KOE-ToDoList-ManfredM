@@ -19,6 +19,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         }).then(function(response) {
             console.log(response.data);
             $scope.tableros = response.data;
+            //$(".loader").removeClass("show");
         });
     };
 
@@ -32,6 +33,8 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         });
     };
 
+
+    //$(".loader").addClass("show");
     $http({
         method: 'POST',
         url: $rootScope.url+'token',
@@ -50,5 +53,6 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         $scope.getTableros();
         $scope.getStatus();
     });
+
 
 });
