@@ -1,4 +1,5 @@
 var app = angular.module('koeToDoListApp', [
+    'ui.bootstrap',
     'ui.router'
 ]);
  

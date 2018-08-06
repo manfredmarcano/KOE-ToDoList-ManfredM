@@ -1,9 +1,9 @@
 app.controller('indexController', function($http, $scope, $rootScope, sessionService) {
     this.mensaje = "Hola Angular, soy Manfred!";
     $scope.tableros = [];
-    $scope.status = [];
+    //$scope.status = [];
 
-    $scope.getUsername = function (data) {
+    $scope.getUsername = function () {
         $http({
             method: 'GET',
             url: $rootScope.url+'api/user'
@@ -12,7 +12,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         });
     };
 
-    $scope.getTableros = function (data) {
+    $scope.getTableros = function () {
         $http({
             method: 'GET',
             url: $rootScope.url+'api/tablero'
@@ -23,7 +23,8 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         });
     };
 
-    $scope.getStatus = function (data) {
+    /*
+    $scope.getStatus = function () {
         $http({
             method: 'GET',
             url: $rootScope.url+'api/status'
@@ -32,7 +33,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
             $scope.status = response.data;
         });
     };
-
+	*/
 
     //$(".loader").addClass("show");
     $http({
@@ -51,7 +52,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         $http.defaults.headers.common.Authorization = 'Bearer '+sessionService.get();
         $scope.getUsername();
         $scope.getTableros();
-        $scope.getStatus();
+        //$scope.getStatus();
     });
 
 

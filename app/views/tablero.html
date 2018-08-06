@@ -1,164 +1,99 @@
 
-
-
-<div class="row">
-	<div class="col-md-6 col-md-offset-3 mt-5">
-		
-
-		<div class="row">
-
-			<a ui-sref="home" class="return-home">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Regresar a tableros
-			</a>
-
-			<table class="table table-bordered">
-			    <thead>
-					<tr>
-						<th class="col-md-2 text-center">ID</th>
-						<th class="col-md-5 text-center">Nombre del tablero</th>
-						<th class="col-md-5 text-center">Dueño</th>
-					</tr>
-			    </thead>
-			    <tbody>
-					<tr>
-						<td class="col-md-2 text-center">{{ tablero.id }}</td>
-						<td class="col-md-5">{{ tablero.name }}</td>
-						<td class="col-md-5">{{ tablero.user }}</td>
-					</tr>
-			    </tbody>
-			</table>
+<div class="container-fluid">
+	
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 mt-5">
 			
-		</div>
+
+			<div class="row">
+
+				<a ui-sref="home" class="return-home">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Regresar a tableros
+				</a>
+
+				<table class="table table-bordered">
+				    <thead>
+						<tr>
+							<th class="col-md-2 text-center">ID</th>
+							<th class="col-md-5 text-center">Nombre del tablero</th>
+							<th class="col-md-5 text-center">Dueño</th>
+						</tr>
+				    </thead>
+				    <tbody>
+						<tr>
+							<td class="col-md-2 text-center">{{ tablero.id }}</td>
+							<td class="col-md-5">{{ tablero.name }}</td>
+							<td class="col-md-5">{{ tablero.user }}</td>
+						</tr>
+				    </tbody>
+				</table>
+				
+			</div>
 
 
-		<div class="row">
+			<div class="row tickets-wrapper">
 
-			<div class="col-md-4 ticket" ng-repeat="item in tickets">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-9">
-								<h3 class="panel-title">{{ item.title }}</h3>		
-							</div>
-							<div class="col-xs-3">
-								<div class="id-circle">
-									<span>{{ item.id }}</span>
+				<div ng-repeat="item in tickets">
+					<div class="clearfix" ng-if="$index % 3 == 0"></div>
+					<div class="col-md-4 ticket" >
+						<div class="panel panel-default">
+							<div class="panel-heading" ng-style="{ 'background-color': getLastDate(item.estatus) }">
+								<div class="row">
+									<div class="col-xs-9">
+										<h3 class="panel-title">{{ item.title }}</h3>		
+									</div>
+									<div class="col-xs-3">
+										<div class="id-circle" ng-style="{ 'background-color': getLastDate(item.estatus) }">
+											<span class="number">{{ item.estimated_time }}</span>
+											<span class="date">{{ item.date | date : "dd/MM/yyyy" }}</span>
+										</div>
+									</div>
 								</div>
+								
+							</div>
+							<div class="panel-body">
+								{{ item.description }}
+							</div>
+							<div class="panel-footer">
+								<div class="row">
+									<div class="col-xs-3 text-center">
+										<a href="#" class="btnDelete">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+										</a>
+									</div>
+									<div class="col-xs-3 col-xs-offset-6 text-center">
+										<a href="#" class="btnUpdate">
+											<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+										</a>
+									</div>
+								</div>
+								
+								
 							</div>
 						</div>
-						
-					</div>
-					<div class="panel-body">
-						{{ item.description }}
-					</div>
-					<div class="panel-footer">
-						<div class="row">
-							<div class="col-xs-3 text-center">
-								<a href="#" class="btnDelete">
-									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-								</a>
-							</div>
-							<div class="col-xs-3 col-xs-offset-6 text-center">
-								<a href="#" class="btnUpdate">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-								</a>
-							</div>
-						</div>
-						
-						
 					</div>
 				</div>
+
+						
+
+
+
+				<div class="col-xs-12 text-center">
+					<span class="glyphicon glyphicon-plus btnAddTicket" aria-hidden="true" ng-click="open('sm')"></span>
+				</div>
+				
 			</div>
 
 			<!--
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 ticket">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Panel title</h3>
-					</div>
-					<div class="panel-body">
-						Panel content
-					</div>
-					<div class="panel-footer">Panel footer</div>
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<span class="glyphicon glyphicon-plus btnAddTicket" aria-hidden="true" ng-click="open('sm')"></span>
 				</div>
 			</div>
 			-->
+
+
 		</div>
-
-
-
 	</div>
+
 </div>

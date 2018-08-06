@@ -39,9 +39,16 @@ body {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	color: #FFFFFF;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .return-home:hover {
 	text-decoration: none;
+}
+.return-home:hover > span {
+	background-color: #687690;
 }
 
 .mt-5 {
@@ -57,6 +64,9 @@ body {
 	color: red;
 }
 
+textarea {
+	resize: none;
+}
 
 
 .id-circle {
@@ -69,15 +79,31 @@ body {
     position: absolute;
     top: -26px;
     right: 10px;
+    border: solid 2px #FFFFFF;
 }
 
-.id-circle > span {
+.id-circle > span.number {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.id-circle > span.date {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333;
+    font-size: .85rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+
+.panel-title {
+	color: #FFFFFF;
+}
 
 /*
 .btnDelete {
@@ -87,7 +113,11 @@ body {
 }
 */
 
+    
 
+.panel-default > .panel-heading {
+    padding: 18px 15px;
+}
 
 
 
@@ -149,25 +179,52 @@ body {
 }
 
 
+.btnAddTicket {
+    background-color: #0f5ff3;
+    padding: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    color: #FFFFFF;
+    cursor: pointer;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.btnAddTicket:hover {
+	background-color: #687690;
+}
+
+.tickets-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #dedede;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+
 
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	/*
 	.ticket:nth-child(3n+0) {
 	    padding-right: 0;
-	    /*background-color: red;*/
 	}
 
 	.ticket:nth-child(3n+1) {
 	    padding-left: 0;
-	    /*background-color: green;*/
 	}
 
 	.ticket:nth-child(3n+2) {
 	    padding-left: 7.5px;
 	    padding-right: 7.5px;
-	    /*background-color: yellow;*/
 	}
+	*/
 }
 
 

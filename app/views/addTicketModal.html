@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center" id="modal-title">Crear ticket</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <!--
+    <ul>
+        {{pc.data}}
+    </ul>
+	-->
+	<div class="form-group">
+		<!--
+		<label for="exampleInputEmail1">Email address</label>
+		-->
+		<input type="text" class="form-control" placeholder="Título" ng-model="newTicket.title">
+	</div>
+	<div class="form-group">
+		<textarea class="form-control" rows="3" placeholder="Descripción" ng-model="newTicket.description"></textarea>
+	</div>
+	<div class="form-group">
+		<input type="number" class="form-control" placeholder="Prioridad" ng-model="newTicket.estimatedTime">
+	</div>
+
+	<div class="form-group">
+		<select class="form-control" ng-model="newTicket.statusSelected" ng-options="option.name for option in pc.status track by option.id" ng-style="{ 'background-color': newTicket.statusSelected.color, 'color': '#FFFFFF' }">
+			<!--
+	      	<option ng-repeat="option in pc.status" value="{{option.id}}">{{option.name}}</option>
+	      	-->
+	    </select>
+	</div>
+
+	<!--
+	<pre>{{ pc.status | json }}</pre>
+
+	<pre>{{ statusSelected | json }}</pre>
+	
+	<pre>{{ newTicket | json }}</pre>
+	-->
+	
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="pc.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="pc.cancel()">Cancel</button>
+</div>
