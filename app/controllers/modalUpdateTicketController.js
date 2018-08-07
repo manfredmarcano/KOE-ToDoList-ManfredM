@@ -4,6 +4,7 @@ app.controller('modalUpdateTicketController', function ($uibModalInstance, ticke
 	pc.status = [];
 
 	pc.ok = function () {
+        $(".lds-ripple").addClass("show");
 		$http({
             method: 'PUT',
             data: {
@@ -11,6 +12,7 @@ app.controller('modalUpdateTicketController', function ($uibModalInstance, ticke
             },
             url: $rootScope.url+'api/ticket/'+pc.ticket.id
         }).then(function(response) {
+            $(".lds-ripple").removeClass("show");
         	updateTicketsListService.setTicket(pc.ticket);
         	$uibModalInstance.close();
         });
@@ -20,10 +22,12 @@ app.controller('modalUpdateTicketController', function ($uibModalInstance, ticke
 		$uibModalInstance.dismiss('cancel');
 	};
     
+    $(".lds-ripple").addClass("show");
     $http({
         method: 'GET',
         url: $rootScope.url+'api/status'
     }).then(function(response) {
+        $(".lds-ripple").removeClass("show");
         pc.status = response.data;
         pc.ticket.estatus = response.data[0];
     });

@@ -13,6 +13,7 @@ app.controller('modalAddTicketController', function ($uibModalInstance, tableroI
 	//$scope.statusSelected = {};
 
 	pc.ok = function () {
+		$(".lds-ripple").addClass("show");
 		$http({
             method: 'POST',
             data: {
@@ -23,6 +24,7 @@ app.controller('modalAddTicketController', function ($uibModalInstance, tableroI
             },
             url: $rootScope.url+'api/tablero/'+pc.tableroId+'/ticket'
         }).then(function(response) {
+        	$(".lds-ripple").removeClass("show");
 
 
         	if (response.status == 200) {
@@ -48,10 +50,12 @@ app.controller('modalAddTicketController', function ($uibModalInstance, tableroI
 	};
 
     
+    $(".lds-ripple").addClass("show");
     $http({
         method: 'GET',
         url: $rootScope.url+'api/status'
     }).then(function(response) {
+    	$(".lds-ripple").removeClass("show");
         console.log(response.data);
         pc.status = response.data;
         $scope.newTicket.statusSelected = response.data[0];

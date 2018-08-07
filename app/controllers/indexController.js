@@ -17,11 +17,11 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         }).then(function(response) {
             //console.log(response.data);
             $scope.tableros = response.data;
-            //$(".loader").removeClass("show");
+            $(".lds-ripple").removeClass("show");
         });
     };
 
-    //$(".loader").addClass("show");
+    $(".lds-ripple").addClass("show");
     $http({
         method: 'POST',
         url: $rootScope.url+'token',

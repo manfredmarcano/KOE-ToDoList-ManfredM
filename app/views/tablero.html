@@ -31,7 +31,43 @@
 			</div>
 
 
+			<!-- Filtros -->
+			<div class="row">
+				<div class="col-md-4 pr-0 text-right">
+				   <label class="control-label pt-5">Filtrar:</label>
+				</div>
+				<div class="col-md-4 pr-0">
+					<div class="form-group">
+						<select class="form-control" ng-model="filtros.estado">
+							<option value="0">-- Seleccionar estado --</option>
+							<option value="1">Pendiente</option>
+							<option value="2">Trabajando</option>
+							<option value="3">Completado</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4 pr-0">
+					<div class="form-group">
+						<select class="form-control" ng-model="filtros.fecha">
+							<option value="0">-- Fecha --</option>
+							<option value="1">Ascendente</option>
+							<option value="2">Descendente</option>
+						</select>
+					</div>
+				</div>
+				<!--
+				<div class="col-xs-12">
+					<pre>{{ filtros | json }}</pre>
+				</div>
+				-->
+			</div>
+
+
 			<div class="row tickets-wrapper">
+
+				<div class="col-xs-12" ng-if="!tickets.length">
+					<h5 class="text-center">No existen resultados</h5>
+				</div>
 
 				<div ng-repeat="item in tickets">
 					<div class="clearfix" ng-if="$index % 3 == 0"></div>
@@ -73,6 +109,12 @@
 						</div>
 					</div>
 				</div>
+
+				<!--
+				<div class="col-xs-12">
+					<pre>{{ tickets | json }}</pre>
+				</div>
+				-->
 
 				
 				<!-- Botón para crear tickets -->
