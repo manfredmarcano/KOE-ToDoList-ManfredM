@@ -1,4 +1,4 @@
-app.controller('tableroController', function($http, $scope, $rootScope, $transition$, $uibModal, $document, updateTicketsListService, $filter, $state) {
+app.controller('tableroController', function($http, $scope, $rootScope, $transition$, $uibModal, $document, updateTicketsListService, $filter, $state, $log) {
 	$scope.tablero = {};
 	$scope.tickets = [];
 	$scope.showView = false;
@@ -21,6 +21,8 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 
 		modalInstance.result.then(function () {
 			$scope.tickets.push( updateTicketsListService.getTicket() );
+		}, function () {
+		  	$log.info('Modal dismissed at: ' + new Date());
 		});
 	};
 
@@ -42,6 +44,8 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 
 		modalInstance.result.then(function () {
 			$scope.tickets = $filter('filter')($scope.tickets, function(value, index) {return value.id !== updateTicketsListService.getTicket().id;});
+		}, function () {
+		  	$log.info('Modal dismissed at: ' + new Date());
 		});
 	};
 
@@ -63,6 +67,8 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 
 		modalInstance.result.then(function () {
 			getTableroTickets();
+		}, function () {
+		  	$log.info('Modal dismissed at: ' + new Date());
 		});
 	};
 
@@ -78,19 +84,12 @@ app.controller('tableroController', function($http, $scope, $rootScope, $transit
 	};
 
 	$scope.getLastDate = function (estatus) {
-		/*
-		var last = estatus.sort(function(a,b) {
-			return new Date(b.date) - new Date(a.date);
-		});
-		*/
-		//console.log("SSS ", estatus);
 		var last = estatus[0];
 		for (var i=1; i<estatus.length; i++) {
 			if (estatus[i].date > last.date) {
 				last = estatus[i];
 			}
 		}
-		//return last[0];
 		return last;
 	};
 

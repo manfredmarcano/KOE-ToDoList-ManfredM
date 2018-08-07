@@ -1,17 +1,4 @@
 app.controller('modalUpdateTicketController', function ($uibModalInstance, ticket, $http, $rootScope, $scope, updateTicketsListService) {
-	/*
-	$scope.getLastDate = function (estatus) {
-		var last = estatus[0] || {};
-		for (var i=1; i<estatus.length; i++) {
-			if (estatus[i].date > last.date) {
-				last = estatus[i];
-			}
-		}
-
-		return last;
-	};
-	*/
-
 	var pc = this;
 	pc.ticket = angular.copy(ticket);
 	pc.status = [];

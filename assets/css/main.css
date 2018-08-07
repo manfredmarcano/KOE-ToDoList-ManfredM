@@ -45,6 +45,7 @@ body {
   margin-bottom: 20px;
   display: inline-block;
 }
+
 .return-home > span {
 	background-color: #0f5ff3;
 	padding: 10px;
@@ -57,9 +58,11 @@ body {
 	-o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
 .return-home:hover {
 	text-decoration: none;
 }
+
 .return-home:hover > span {
 	background-color: #687690;
 }
@@ -67,7 +70,6 @@ body {
 .mt-5 {
 	margin-top: 50px;
 }
-
 
 .p-0 {
 	padding: 0;
@@ -80,7 +82,6 @@ body {
 textarea {
 	resize: none;
 }
-
 
 .id-circle {
 	border-radius: 50%;
@@ -275,7 +276,6 @@ textarea {
 .a-box:hover {
   color: #FFFFFF;
 }
-
 
 .title-tableros {
   margin-top: 50px;

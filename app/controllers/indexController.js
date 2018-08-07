@@ -1,7 +1,5 @@
 app.controller('indexController', function($http, $scope, $rootScope, sessionService) {
-    this.mensaje = "Hola Angular, soy Manfred!";
     $scope.tableros = [];
-    //$scope.status = [];
 
     $scope.getUsername = function () {
         $http({
@@ -23,18 +21,6 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         });
     };
 
-    /*
-    $scope.getStatus = function () {
-        $http({
-            method: 'GET',
-            url: $rootScope.url+'api/status'
-        }).then(function(response) {
-            //console.log(response.data);
-            $scope.status = response.data;
-        });
-    };
-	*/
-
     //$(".loader").addClass("show");
     $http({
         method: 'POST',
@@ -54,6 +40,5 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
         $scope.getTableros();
         //$scope.getStatus();
     });
-
 
 });
