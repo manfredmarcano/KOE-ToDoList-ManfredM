@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	    <title>Bootstrap 101 Template</title>
+	    <title>TO-DO list - KOE Test - Manfred Marcano</title>
 
 	    <!-- Bootstrap -->
 	    <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,36 +22,24 @@
   	<body>
 	    <div ui-view></div>
 
-		<!--
-		<div class="loader-wrapper">
-			<div class="lds-facebook loader"><div></div><div></div><div></div></div>
-		</div>
-		-->
-
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="vendors/jquery/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
-		
-
 		<script src="vendors/angularjs/angular.min.js"></script>
-
-		<!--
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
-    	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
-    	-->
 
 		<script src="vendors/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
 		<script src="vendors/ui-router/angular-ui-router.min.js"></script>
 		<script src="app/app.js"></script>
 
 		<script src="app/services/sessionService.js"></script>
+		<script src="app/services/updateTicketsListService.js"></script>
 
 		<script src="app/controllers/indexController.js"></script>
 		<script src="app/controllers/tableroController.js"></script>  
 		<script src="app/controllers/modalAddTicketController.js"></script>
 		<script src="app/controllers/modalDeleteTicketController.js"></script>
+		<script src="app/controllers/modalUpdateTicketController.js"></script>
   	</body>
 </html>

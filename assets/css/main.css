@@ -206,9 +206,9 @@ textarea {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #dedede;
-  border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+  border-radius: 10px;
   margin-bottom: 50px;
 }
 
@@ -234,5 +234,52 @@ textarea {
 	*/
 }
 
+
+.box{
+  position: relative;
+  width: 100%;   /* desired width */
+  background-color: #dedede;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.box:before{
+  content: "";
+  display: block;
+  padding-top: 100%;  /* initial ratio of 1:1*/
+}
+.box > .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.box:hover {
+  background-color: #0f5ff3;
+}
+.a-box {
+  text-transform: uppercase;
+}
+.a-box:hover {
+  color: #FFFFFF;
+}
+
+
+.title-tableros {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
 
 

@@ -8,7 +8,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
             method: 'GET',
             url: $rootScope.url+'api/user'
         }).then(function(response) {
-            console.log(response);
+            //console.log(response);
         });
     };
 
@@ -17,7 +17,7 @@ app.controller('indexController', function($http, $scope, $rootScope, sessionSer
             method: 'GET',
             url: $rootScope.url+'api/tablero'
         }).then(function(response) {
-            console.log(response.data);
+            //console.log(response.data);
             $scope.tableros = response.data;
             //$(".loader").removeClass("show");
         });
